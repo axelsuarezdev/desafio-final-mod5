@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Odibee+Sans&display=swap');
+body{
+    box-sizing: border-box; 
+    margin: 0;
+    background-image: url("./components/images/fondo.png");
+}
+.root{
+    height: 88vh;
+    max-height: 100vh;
+}
+            

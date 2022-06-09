@@ -1,0 +1,12 @@
+{
+  "devDependencies": {
+    "@types/node": "^17.0.38",
+    "gh-pages": "^4.0.0",
+    "parcel": "^2.6.0"
+  },
+  "scripts": {
+    "dev": "parcel serve ./src/index.html",
+    "build": "parcel build ./src/index.html --dist-dir build --public-url /desafio-final-mod5/" ,
+    "deploy": "gh-pages -d build"
+  }
+}
