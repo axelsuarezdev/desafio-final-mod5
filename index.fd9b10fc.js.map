@@ -1,1 +1,0 @@
-{"mappings":"AAEiBA,SAASC,cAAc","sources":["src/index.ts"],"sourcesContent":["// import { initRouter } from \"./router\"\r\n(function(){\r\n    const root = document.querySelector(\".root\");\r\n    // initRouter(root);\r\n})();"],"names":["document","querySelector"],"version":3,"file":"index.fd9b10fc.js.map"}
