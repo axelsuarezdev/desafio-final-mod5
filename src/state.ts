@@ -1,4 +1,3 @@
-type Jugada = "Tijeras" | "Piedra" | "Papel";
 export const state = {
     data: {
         //Los movimientos elegidos por el Jugador y la "IA"
@@ -13,6 +12,7 @@ export const state = {
         listeners:[]
     },
     init(){
+        this.setState(JSON.stringify(this.getSate()));
         const localData = localStorage.getItem("saved-state");
         this.setState(JSON.parse(localData));
     },
