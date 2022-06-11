@@ -43,7 +43,7 @@ import { url } from "inspector";
                     gap: 120px;
                 }
             }
-            @media (max-height: 367px){
+            @media (max-height: 652px){
                 .container{
                     display: none;
                 }

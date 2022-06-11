@@ -7,19 +7,20 @@ export function initHomePage(containerEl){
     style.textContent= `
     @import url('https://fonts.googleapis.com/css2?family=Odibee+Sans&display=swap');
     .home{
-        min-height: 600px;
-        min-width: 500px;
-        max-width: 700px;
         height: 100%;
+        width: 100%;
+        max-width: 80%;
         display: flex;
         justify-content: space-evenly;
         flex-direction: column;
         padding: 50px;
+        gap: 50px;
     }
     @media (min-width: 767px){
         .home {
             margin: 0 auto;
-            padding-top: 0;
+            
+            max-width: 50%
         }
 
     `;
@@ -33,8 +34,8 @@ export function initHomePage(containerEl){
         //Se agrega la clase "home" al div
     divEl.classList.add("home");
     //CLICK EMPEZAR
-    const root = document.querySelector(".root");
-    const empezarButton = divEl.querySelector(".button");
+    const root = document.querySelector(".root") as Element;
+    const empezarButton = divEl.querySelector(".button") as Element;
             console.log("Soy el home usando el button component", empezarButton);
             empezarButton.addEventListener("click", ()=>{
                 goTo("/instructions", root);

@@ -12,9 +12,15 @@ export const state = {
         listeners:[]
     },
     init(){
-        this.setState(JSON.stringify(this.getSate()));
-        const localData = localStorage.getItem("saved-state");
-        this.setState(JSON.parse(localData));
+        if (localStorage.getItem("saved-state")){
+            console.log("Soy el init, se encontró un saved-state");
+            const localData = localStorage.getItem("saved-state") as string;
+            this.setState(JSON.parse(localData));
+        }
+        else{
+            console.log("Soy el init, no se encontró un saved-state, puntuación reniciada");
+           this.setState(this.getSate());
+       }
     },
     getSate(){
         return this.data;

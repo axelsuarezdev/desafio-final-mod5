@@ -12,16 +12,21 @@
             @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
            .title-two{
                 align-self: center;
-                max-width: 500px;
+                max-width: 80%;
                 font-family: 'Permanent Marker', cursive;
                 font-style: normal;
                 font-weight: 600;
-                font-size: 50px;
+                font-size: 2rem;
                 line-height: 100%;
                 /* or 40px */
                 text-align: center;
                 color: #000000;
                 margin: 0 auto;
+            }
+            @media (min-width: 767px){
+             .title-two {
+                max-width: 60%;
+             }
             }
             `;
             this.shadow.innerHTML = `

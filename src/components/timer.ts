@@ -11,7 +11,7 @@ customElements.define("timer-el", class extends HTMLElement{
         style.innerHTML = `
         @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
         body {
-        margin: 0;
+        margin: 0 auto;
         padding: 0;
         display: flex;
         justify-content: center;
@@ -54,6 +54,7 @@ customElements.define("timer-el", class extends HTMLElement{
         }
 
         .countdown .number {
+        margin: 0 auto;
         position: absolute;
         top: 0;
         left: 0;
@@ -100,18 +101,18 @@ customElements.define("timer-el", class extends HTMLElement{
         this.shadow.innerHTML=`
         <div class="countdown">
         
-        <div class="number">
-          <h2>3</h2>
-        </div>
-        
-        <div class="number">
-          <h2>2</h2>
-        </div>
+            <div class="number">
+            <h2>3</h2>
+            </div>
+            
+            <div class="number">
+            <h2>2</h2>
+            </div>
 
-        <div class="number">
-        <h2>1</h2>
-        </div>
-      
+            <div class="number">
+            <h2>1</h2>
+            </div>
+        
         </div>
         `;
         this.shadow.appendChild(style);

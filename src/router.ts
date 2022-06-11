@@ -36,10 +36,9 @@ const routes = [
 }
 
 
-function handleRoute(route: string, containerEl?: Element) {
+function handleRoute(route: string, containerEl: Element) {
   console.log("El handleRoute recibió una nueva ruta", route);
-  console.log("El container recibido en handleRoute", containerEl);
-//   window.onpopstate = function(){
+ //   window.onpopstate = function(){
 //     handleRoute(location.pathname);
 // };
     const newRoute = isGithubPages() ? route.replace(BASE_PATH, "") : route;
@@ -62,7 +61,7 @@ function handleRoute(route: string, containerEl?: Element) {
   }
 
 
-  export function goTo(path:string, containerEl?:Element) {
+  export function goTo(path:string, containerEl:Element) {
       // el goTo va a recibir la ruta de siempre: /jugar
       // por eso, en el caso de GitHub Pages
       // debemos anteponerle el BASE_PATH para que funcione

@@ -13,8 +13,7 @@ export function initDuelPage(containerEl){
     //CSS
     style.textContent= `
    .duel{
-        min-height: 600px;
-        min-width: 500px;
+        width: 100%;
         max-width: 700px;
         height: 100%;
         display: flex;
@@ -45,11 +44,13 @@ export function initDuelPage(containerEl){
         align-self: center;
         gap: 95px;
         margin: 0 auto;
+        
+        width: 100vw;
     }
     .container__img{
         cursor: pointer;
         position: relative;
-        height: 30vh;   
+        height: 20vh;   
         
         transition: transform 250ms;
     }
@@ -60,6 +61,12 @@ export function initDuelPage(containerEl){
     @media (max-height: 367px){
         .container{
             display: none;
+        }
+    }
+    @media (max-width: 460px){
+        .container{
+            justify-content: center;
+            gap: 0;
         }
     }
     .computer-hand{
@@ -78,6 +85,8 @@ export function initDuelPage(containerEl){
         top: -12px;
     }
     .final__results{
+        min-width: 370px;
+        min-height: 37px;
         width: 100%;
         height: 100%;
         top: 50%;
@@ -89,7 +98,6 @@ export function initDuelPage(containerEl){
         flex-direction: column;
        
         z-index: 10;
-        background-color: ;
         margin: 0 auto;
         gap: 15px;
         transform: translate(-50%, -50%);
@@ -109,9 +117,9 @@ export function initDuelPage(containerEl){
          divEl.classList.add("duel");
     // ELECCIÓN DEL PLAYER
     var playerPlay = "";
-    var papelHand = divEl.querySelector(".papel");
-    var piedraHand = divEl.querySelector(".piedra");
-    var tijeraHand = divEl.querySelector(".tijera");
+    var papelHand = divEl.querySelector(".papel") as HTMLElement;
+    var piedraHand = divEl.querySelector(".piedra") as HTMLElement;
+    var tijeraHand = divEl.querySelector(".tijera") as HTMLElement;
     //Funciones para los eventListener (Está hecho así para mejor manipulación al finalizar el timer)
     var papelFunction = ()=>{
         playerPlay = "Papel";
@@ -188,7 +196,7 @@ export function initDuelPage(containerEl){
         if (contador>2){
             //se termina el conteo 
             clearInterval(intervalId);
-            let timer = divEl.querySelector(".timer");
+            let timer = divEl.querySelector(".timer") as HTMLElement;
             console.log("timer", timer);
             //Se elimina el timer
             timer.remove();
@@ -216,14 +224,14 @@ export function initDuelPage(containerEl){
                 <score-el></score-el>
                 <button-el class="button">Volver a jugar <button-el>
                 `;
-                var buttonEl = resultEl.querySelector(".button");
+                var buttonEl = resultEl.querySelector(".button") as HTMLElement;
                 console.log(buttonEl);
-                var root = document.querySelector(".root");
-                root.appendChild(resultEl);
-             buttonEl.addEventListener("click", ()=>{
-                // SELECCIONAR RESULT EL Y ELIMINAR!!!
-                resultEl.remove();
-                goTo("/duel", root);
+                
+                var root = document.querySelector(".root") as HTMLElement;
+                divEl.appendChild(resultEl);
+                buttonEl.addEventListener("click", ()=>{
+                        resultEl.remove();
+                        goTo("/duel", root);
             });
                 if (playerPlay == ""){
                     resultEl.style.background = "rgba(42, 40, 40, 0.8)";

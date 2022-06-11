@@ -16,7 +16,7 @@
                 font-family: "Lobster", cursive;
                 font-style: normal;
                 font-weight: 700;
-                font-size: 110px;
+                font-size: 6rem;
                 line-height: 98.1%;
                 margin: 0 auto;
                 color: #009048;
